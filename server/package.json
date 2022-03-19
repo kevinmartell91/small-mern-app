@@ -1,0 +1,13 @@
+{
+  "name": "small-mern-app",
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "nodemon node index.js"
+  }
+}
