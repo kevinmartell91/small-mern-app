@@ -1,4 +1,4 @@
-import { listings } from './listings';
+import { listings } from '../listings';
 import {
   GraphQLSchema,
   GraphQLString,
