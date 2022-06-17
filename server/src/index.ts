@@ -7,7 +7,6 @@ import env from './config/env';
 const port = env.app.port;
 const mount = async (app: Application) => {
   const db = await connectDatabase();
-  const listings = await db.listings.find({}).toArray();
 
   const server = new ApolloServer({
     typeDefs,

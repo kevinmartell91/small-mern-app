@@ -8,9 +8,9 @@
 
 - [x] 3. Introduce GraphQL by investigating GitHub's API
 
-- [ ] 4. Deploy our GraphQL API using Apollo
+- [x] 4. Deploy our GraphQL API using Apollo
 
-- [ ] 5. Persist data with MongoDB
+- [x] 5. Persist data with MongoDB
 
 - [ ] 6. Bootstrap a React project
 
