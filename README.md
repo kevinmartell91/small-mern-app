@@ -12,11 +12,11 @@
 
 - [x] 5. Persist data with MongoDB
 
-- [ ] 6. Bootstrap a React project
+- [x] 6. Bootstrap a React project
 
-- [ ] 7. Integrate TypeScript into our React project
+- [x] 7. Integrate TypeScript into our React project
 
-- [ ] 8. Have our client interact with our server using GraphQL
+- [x] 8. Have our client interact with our server using GraphQL
 
 - [ ] 9. Introduce React Hooks, and even make some of our custom Hooks
 

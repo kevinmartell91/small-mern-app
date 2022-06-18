@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import { ApolloServer } from 'apollo-server-express';
-import { typeDefs, resolvers } from './graphql';
+import { typeDefs } from './graphql';
+import { resolvers } from './graphql/resolvers';
 import { connectDatabase } from './database';
 import env from './config/env';
 
