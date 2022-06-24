@@ -1,14 +1,16 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useState } from 'react';
 import { server } from '../../lib/api';
 import {
+  Listing,
   ListingsData,
   DeleteListingData,
   DeleteListingVaribles,
 } from './types';
+import { useQuery } from '../../lib/api/useQuery';
 
 const LISTINGS = `
     query Listings {
-        listingss {
+        listings {
             id
             title
             image
@@ -35,31 +37,39 @@ interface Body {
 }
 
 export const Listings: FunctionComponent<Body> = ({ title }) => {
-  const fetchListings = async () => {
-    const { data } = await server.fetch<ListingsData>({ query: LISTINGS });
-    return data.listings;
-  };
+  const { data, refetch } = useQuery<ListingsData>(LISTINGS);
 
-  const deleteListing = async () => {
-    const { data } = await server.fetch<
-      DeleteListingData,
-      DeleteListingVaribles
-    >({
+  const deleteListing = async (id: string) => {
+    await server.fetch<DeleteListingData, DeleteListingVaribles>({
       query: DELETE_LISTING,
       variables: {
-        id: '62abb2ac866b6930f368eb1b',
+        id,
       },
     });
-    return data.deleteListing;
+    refetch();
   };
+
+  const listings = data ? data.listings : null;
+
+  const listingList = listings ? (
+    <ul>
+      {listings.map((listing) => {
+        return (
+          <li key={listing.id}>
+            {' '}
+            {listing.title}{' '}
+            <button onClick={() => deleteListing(listing.id)}>Delete</button>{' '}
+          </li>
+        );
+      })}
+    </ul>
+  ) : null;
 
   const tag = <h2>{title}</h2>;
   return (
     <div>
       {tag}
-      <button onClick={fetchListings}>Query Listings!!!</button>
-      <button onClick={deleteListing}>Delete Listing</button>
-      {}
+      {listingList}
     </div>
   );
 };

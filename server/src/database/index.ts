@@ -1,5 +1,5 @@
-import { MongoClient, Collection } from 'mongodb';
-import { Database, Listing } from '../lib/types';
+import { MongoClient } from 'mongodb';
+import { Database } from '../lib/types';
 import env from '../config/env';
 
 const user = env.mongodb.user;

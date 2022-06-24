@@ -11,7 +11,6 @@ export const server = {
       body: JSON.stringify(body),
     });
     // return <Promise<{ data: TData }>>res.json(); // angle brackets to type assert res.json()
-
     return res.json() as Promise<{ data: TData }>; // (as) to type assert res.json()
   },
 };
