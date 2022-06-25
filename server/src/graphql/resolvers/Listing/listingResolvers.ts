@@ -4,7 +4,6 @@ import { ObjectId } from 'mongodb';
 export const listingResolvers = {
   Query: {
     listings: async (_root: undefined, _args: {}, { db }: { db: Database }) => {
-      throw new Error('Error kribn!');
       return await db.listings.find().toArray();
     },
   },

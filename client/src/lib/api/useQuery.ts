@@ -7,7 +7,11 @@ interface State<TData> {
   error: boolean;
 }
 
-export const useQuery = <TData = any>(query: string) => {
+interface QueryResult<TDara> extends State<TDara> {
+  refetch: () => void;
+}
+
+export const useQuery = <TData = any>(query: string): QueryResult<TData> => {
   const [state, setState] = useState<State<TData>>({
     data: null,
     loading: false,
