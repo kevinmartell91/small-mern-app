@@ -37,7 +37,7 @@ interface Body {
 }
 
 export const Listings: FunctionComponent<Body> = ({ title }) => {
-  const { data, refetch } = useQuery<ListingsData>(LISTINGS);
+  const { data, refetch, loading, error } = useQuery<ListingsData>(LISTINGS);
 
   const deleteListing = async (id: string) => {
     await server.fetch<DeleteListingData, DeleteListingVaribles>({
@@ -65,10 +65,16 @@ export const Listings: FunctionComponent<Body> = ({ title }) => {
     </ul>
   ) : null;
 
-  const tag = <h2>{title}</h2>;
+  if (loading) {
+    return <h2>Loading ... </h2>;
+  }
+  if (error) {
+    return <h2>Uh oh something went wrong !! Please try again later</h2>;
+  }
+
   return (
     <div>
-      {tag}
+      <h2>{title}</h2>
       {listingList}
     </div>
   );
