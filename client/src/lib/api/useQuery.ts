@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState, useReducer } from 'react';
+import { useCallback, useEffect, useReducer } from 'react';
 import { server } from './server';
 
 interface State<TData> {
@@ -6,9 +6,6 @@ interface State<TData> {
   loading: boolean;
   error: boolean;
 }
-// salir del trabajo ?
-// aspiracion salarial
-// python el año pasado (en otros tranajo) y en el 22  un projecto en upwork
 
 type Action<TData> =
   | { type: 'FETCH' }

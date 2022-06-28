@@ -1,36 +1,34 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
-import { server } from '../../lib/api';
+import { FunctionComponent } from 'react';
 import {
-  Listing,
   ListingsData,
   DeleteListingData,
   DeleteListingVaribles,
 } from './types';
-import { useQuery } from '../../lib/api/useQuery';
-import { useMutation } from '../../lib/api/useMutation';
+import { useQuery, useMutation, gql } from '@apollo/react-hooks';
+// import { gql, } from "@apollo/client";
 
-const LISTINGS = `
-    query Listings {
-        listings {
-            id
-            title
-            image
-            address
-            price
-            numOfGuests
-            numOfBeds
-            numOfBaths
-            rating        
-        }
+const LISTINGS = gql`
+  query Listings {
+    listings {
+      id
+      title
+      image
+      address
+      price
+      numOfGuests
+      numOfBeds
+      numOfBaths
+      rating
     }
+  }
 `;
 
-const DELETE_LISTING = `
-    mutation DeleteListing ($id: ID!) {
-      deleteListing (id: $id) {
-        id
-      }
+const DELETE_LISTING = gql`
+  mutation DeleteListing($id: ID!) {
+    deleteListing(id: $id) {
+      id
     }
+  }
 `;
 
 interface Body {
@@ -45,7 +43,7 @@ export const Listings: FunctionComponent<Body> = ({ title }) => {
   ] = useMutation<DeleteListingData, DeleteListingVaribles>(DELETE_LISTING);
 
   const handleDeleteListing = async (id: string) => {
-    await deleteListings({ id });
+    await deleteListings({ variables: { id } });
     refetch();
   };
 

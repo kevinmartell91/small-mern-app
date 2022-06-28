@@ -2,9 +2,22 @@ import React from 'react';
 import { render } from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { Listings } from './section';
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+} from '@apollo/react-hooks';
+// import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+const client = new ApolloClient({
+  uri: '/api',
+  cache: new InMemoryCache(),
+});
 
 render(
-  <Listings title="tiny house!!!"></Listings>,
+  <ApolloProvider client={client}>
+    <Listings title="tiny house!!!"></Listings>
+  </ApolloProvider>,
   document.getElementById('root')
 );
 
