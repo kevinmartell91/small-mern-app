@@ -1,10 +1,11 @@
 import { FunctionComponent } from 'react';
-import {
-  ListingsData,
-  DeleteListingData,
-  DeleteListingVaribles,
-} from './types';
+
 import { useQuery, useMutation, gql } from '@apollo/react-hooks';
+import { Listings as ListingsData } from './__generated__/Listings';
+import {
+  DeleteListing as DeleteListingData,
+  DeleteListingVariables,
+} from './__generated__/DeleteListing';
 // import { gql, } from "@apollo/client";
 
 const LISTINGS = gql`
@@ -40,7 +41,7 @@ export const Listings: FunctionComponent<Body> = ({ title }) => {
   const [
     deleteListings,
     { loading: deleteListingLoading, error: deleteListingError },
-  ] = useMutation<DeleteListingData, DeleteListingVaribles>(DELETE_LISTING);
+  ] = useMutation<DeleteListingData, DeleteListingVariables>(DELETE_LISTING);
 
   const handleDeleteListing = async (id: string) => {
     await deleteListings({ variables: { id } });

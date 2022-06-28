@@ -18,10 +18,10 @@
 
 - [x] 8. Have our client interact with our server using GraphQL
 
-- [ ] 9. Introduce React Hooks, and even make some of our custom Hooks
+- [x] 9. Introduce React Hooks, and even make some of our custom Hooks
 
-- [ ] 10. Install React Apollo and use Apollo's official Hooks to make GraphQL requests
+- [x] 10. Install React Apollo and use Apollo's official Hooks to make GraphQL requests
 
-- [ ] 11. Use the Apollo CLI to auto-generate TypeScript definitions from our GraphQL API
+- [x] 11. Use the Apollo CLI to auto-generate TypeScript definitions from our GraphQL API
 
 - [ ] 12. Finally, introduce and use the Ant Design UI framework to quickly build a more 4presentable UI.
