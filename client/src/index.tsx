@@ -7,6 +7,7 @@ import {
   ApolloProvider,
   InMemoryCache,
 } from '@apollo/react-hooks';
+import './styles/index.css';
 // import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 const client = new ApolloClient({

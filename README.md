@@ -24,4 +24,4 @@
 
 - [x] 11. Use the Apollo CLI to auto-generate TypeScript definitions from our GraphQL API
 
-- [ ] 12. Finally, introduce and use the Ant Design UI framework to quickly build a more 4presentable UI.
+- [x] 12. Finally, introduce and use the Ant Design UI framework to quickly build a more 4 presentable UI. Extended to styled components
