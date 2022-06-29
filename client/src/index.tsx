@@ -1,23 +1,38 @@
 import React from 'react';
 import { render } from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import { Listings } from './section';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import {
   ApolloClient,
   ApolloProvider,
   InMemoryCache,
 } from '@apollo/react-hooks';
 import './styles/index.css';
-// import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+import { Home, Listing, Listings, NotFound, User } from './section';
 
 const client = new ApolloClient({
   uri: '/api',
   cache: new InMemoryCache(),
 });
 
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/listing/:id" element={<Listing />} />
+        <Route path="/listings/:location" element={<Listings />} />
+        <Route path="/user/:id" element={<User />} />
+        <Route path="/*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
+
 render(
   <ApolloProvider client={client}>
-    <Listings title="tiny house!!!"></Listings>
+    <App />
   </ApolloProvider>,
   document.getElementById('root')
 );

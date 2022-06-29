@@ -9,7 +9,6 @@ import {
 
 import { Alert, Avatar, Button, List, Spin } from 'antd';
 import styled from 'styled-components';
-import './';
 
 import { ListingsSkeleton } from './components';
 import './styles/Listings.css';
@@ -47,7 +46,7 @@ interface Body {
   title: string;
 }
 
-export const Listings: FunctionComponent<Body> = ({ title }) => {
+export const Listingss: FunctionComponent<Body> = ({ title }) => {
   const { data, refetch, loading, error } = useQuery<ListingsData>(LISTINGS);
   const [
     deleteListings,

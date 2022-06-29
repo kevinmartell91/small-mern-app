@@ -28,9 +28,9 @@
 
 ## The second part of the small MERN app has the following steps. It is open the possibility to extend more functionalities.
 
-- [ ] Setup MERN app to part 2
+- [x] Setup MERN app to part 2
 
-- [ ] Rounting in MERN App
+- [x] Rounting in MERN App
 
 - [ ] User authentication with Google Sign-in $ OAuth 2.0
 
