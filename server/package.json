@@ -1,5 +1,5 @@
 {
-  "name": "small-mern-app",
+  "name": "client",
   "version": "0.1.0",
   "dependencies": {
     "apollo-server-express": "^3.8.2",

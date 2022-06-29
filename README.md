@@ -1,6 +1,6 @@
-# Small mern app
+# Small MERN app with GraphQL
 
-## This small mern app will be created in the following order.
+## This small MERN app will be created in the following order.
 
 - [x] 1. Create a Node server
 
@@ -25,3 +25,19 @@
 - [x] 11. Use the Apollo CLI to auto-generate TypeScript definitions from our GraphQL API
 
 - [x] 12. Finally, introduce and use the Ant Design UI framework to quickly build a more 4 presentable UI. Extended to styled components
+
+## The second part of the small MERN app has the following steps. It is open the possibility to extend more functionalities.
+
+- [ ] Setup MERN app to part 2
+
+- [ ] Rounting in MERN App
+
+- [ ] User authentication with Google Sign-in $ OAuth 2.0
+
+- [ ] Persist Login sessions with cookies
+
+- [ ] Building user page
+
+- [ ] Builing listing page
+
+- [ ] Building home page
