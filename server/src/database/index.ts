@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-import { Database } from '../lib/types';
+import { Database, User, Listing, Booking } from '../lib/types';
 import env from '../config/env';
 
 const user = env.mongodb.user;
@@ -13,15 +13,12 @@ const url =
     .replace('<cluster>', cluster as string);
 
 export const connectDatabase = async (): Promise<Database> => {
-  const client = await MongoClient.connect(url as string, {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-  });
+  const client = await MongoClient.connect(url as string, {});
   const db = client.db('main');
 
   return {
-    listings: db.collection('test_listings'),
+    listings: db.collection<Listing>('listings'),
+    users: db.collection<User>('users'),
+    bookings: db.collection<Booking>('bookings'),
   };
-
-  // return db.collection<Listing>('test_listings');
 };
